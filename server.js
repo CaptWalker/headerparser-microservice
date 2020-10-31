@@ -26,11 +26,11 @@ app.get("/api/hello", function (req, res) {
 
 app.get("/api/whoami", (req, res) => {
   console.log(req.connection.remoteAddress)
-  const client = req.connection.remoteAddress
+  const ipaddress = req.connection.remoteAddress
   const language = req.header('accept-language');
   const software = req.header('user-agent');
   const response = {
-    client, language, software
+    ipaddress, language, software
   };
   res.json(response);
 })
